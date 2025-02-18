@@ -1,0 +1,38 @@
+Candidate detection results:
+    True positives: 2474
+    False positives: 14626
+    False negatives: 16
+    True negatives: 0
+    Total number of candidates: 17101
+    Total number of nodules: 2490
+    Total number of ignored candidates which were double detections on a nodule: 9
+    Sensitivity: 0.994
+    Average number of candidates per scan: 31.092727273
+    FN_diammeter:
+    FN_1: w:11.6, h:10.0, d:4.0 sericeuid: CHESTCT1480
+    FN_2: w:6.2, h:5.3, d:5.0 sericeuid: CHESTCT1480
+    FN_3: w:7.0, h:6.0, d:5.0 sericeuid: CHEST1250
+    FN_4: w:5.1, h:4.9, d:4.0 sericeuid: CHESTCT1769
+    FN_5: w:7.3, h:7.4, d:5.0 sericeuid: CHESTCT1491
+    FN_6: w:5.0, h:5.1, d:4.0 sericeuid: CHEST1775
+    FN_7: w:5.4, h:5.5, d:4.0 sericeuid: CHESTCT1410
+    FN_8: w:8.2, h:6.6, d:5.0 sericeuid: CHESTCT1767
+    FN_9: w:5.4, h:4.9, d:5.0 sericeuid: CHEST1720
+    FN_10: w:4.2, h:4.4, d:3.0 sericeuid: CHESTCT1494
+    FN_11: w:5.0, h:4.8, d:5.0 sericeuid: CHESTCT1494
+    FN_12: w:4.6, h:5.3, d:4.0 sericeuid: CHESTCT1397
+    FN_13: w:6.4, h:6.7, d:5.0 sericeuid: CHESTCT1643
+    FN_14: w:10.1, h:9.4, d:6.0 sericeuid: CHESTCT1643
+    FN_15: w:6.0, h:5.6, d:4.0 sericeuid: CHESTCT1664
+    FN_16: w:4.0, h:4.4, d:4.0 sericeuid: CHESTCT0950
+--------------------
+FP/Scan, Sensitivity, Precision
+0.125, 0.372, 0.931
+0.250, 0.443, 0.889
+0.500, 0.541, 0.830
+1.000, 0.677, 0.754
+2.000, 0.762, 0.633
+4.000, 0.851, 0.491
+8.000, 0.906, 0.339
+
+Froc_mean = 0.65

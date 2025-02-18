@@ -1,0 +1,215 @@
+2024-06-17 13:54:14,587 INFO Total number of nodule annotations: 2473 eval.py:580
+2024-06-17 13:57:22,388 INFO Total number of nodule annotations: 2473 eval.py:580
+2024-06-17 13:57:24,103 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval.py:318
+2024-06-17 13:57:24,105 INFO series_uid: CHESTCT1575, coordX: 124.5, coordY: 100.0, coordZ: 115.5, w: 9.00, h: 8.00, d: 5.00 eval.py:319
+2024-06-17 13:57:24,107 INFO cand_id: 9, coordX: 126.618, coordY: 99.615, coordZ: 118.128, w: 9.82, h: 8.09, d: 6.07 eval.py:320
+2024-06-17 13:57:24,110 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval.py:318
+2024-06-17 13:57:24,112 INFO series_uid: CHESTCT1575, coordX: 124.5, coordY: 100.0, coordZ: 115.5, w: 9.00, h: 8.00, d: 5.00 eval.py:319
+2024-06-17 13:57:24,114 INFO cand_id: 10, coordX: 126.618, coordY: 99.615, coordZ: 118.128, w: 9.82, h: 8.09, d: 6.07 eval.py:320
+2024-06-17 13:57:24,237 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval.py:318
+2024-06-17 13:57:24,239 INFO series_uid: CHESTCT1430, coordX: 74.0, coordY: 187.5, coordZ: 63.5, w: 8.00, h: 7.00, d: 1.00 eval.py:319
+2024-06-17 13:57:24,241 INFO cand_id: 8, coordX: 73.691, coordY: 186.544, coordZ: 65.051, w: 9.82, h: 9.61, d: 4.80 eval.py:320
+2024-06-17 13:57:24,244 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval.py:318
+2024-06-17 13:57:24,245 INFO series_uid: CHESTCT1430, coordX: 74.0, coordY: 187.5, coordZ: 63.5, w: 8.00, h: 7.00, d: 1.00 eval.py:319
+2024-06-17 13:57:24,247 INFO cand_id: 9, coordX: 73.691, coordY: 186.544, coordZ: 65.051, w: 9.82, h: 9.61, d: 4.80 eval.py:320
+2024-06-17 13:57:24,372 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval.py:318
+2024-06-17 13:57:24,374 INFO series_uid: CHESTCT1667, coordX: 236.5, coordY: 53.5, coordZ: 87.0, w: 7.00, h: 7.00, d: 4.00 eval.py:319
+2024-06-17 13:57:24,377 INFO cand_id: 23, coordX: 234.756, coordY: 53.78, coordZ: 84.662, w: 8.13, h: 9.72, d: 6.28 eval.py:320
+2024-06-17 13:57:24,379 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval.py:318
+2024-06-17 13:57:24,381 INFO series_uid: CHESTCT1667, coordX: 236.5, coordY: 53.5, coordZ: 87.0, w: 7.00, h: 7.00, d: 4.00 eval.py:319
+2024-06-17 13:57:24,383 INFO cand_id: 25, coordX: 234.756, coordY: 53.78, coordZ: 84.662, w: 8.13, h: 9.72, d: 6.28 eval.py:320
+2024-06-17 13:57:24,391 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval.py:318
+2024-06-17 13:57:24,393 INFO series_uid: CHESTCT1595, coordX: 288.0, coordY: 146.0, coordZ: 198.5, w: 18.00, h: 20.00, d: 17.00 eval.py:319
+2024-06-17 13:57:24,396 INFO cand_id: 34, coordX: 286.19, coordY: 146.971, coordZ: 193.957, w: 20.61, h: 29.78, d: 23.12 eval.py:320
+2024-06-17 13:57:24,398 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval.py:318
+2024-06-17 13:57:24,400 INFO series_uid: CHESTCT1595, coordX: 288.0, coordY: 146.0, coordZ: 198.5, w: 18.00, h: 20.00, d: 17.00 eval.py:319
+2024-06-17 13:57:24,402 INFO cand_id: 35, coordX: 286.19, coordY: 146.971, coordZ: 193.957, w: 20.61, h: 29.78, d: 23.12 eval.py:320
+2024-06-17 13:57:24,410 INFO Fixed threshold: 0.5725 eval.py:387
+2024-06-17 13:57:24,416 INFO benign              : Recall=0.482, Precision=0.977, F1=0.646, TP= 421, FP=  10, FN= 452 eval.py:417
+2024-06-17 13:57:24,419 INFO probably_benign     : Recall=0.828, Precision=0.571, F1=0.676, TP= 980, FP= 735, FN= 204 eval.py:417
+2024-06-17 13:57:24,421 INFO probably_suspicious : Recall=0.891, Precision=0.494, F1=0.636, TP= 253, FP= 259, FN=  31 eval.py:417
+2024-06-17 13:57:24,424 INFO suspicious          : Recall=0.811, Precision=0.453, F1=0.582, TP= 107, FP= 129, FN=  25 eval.py:417
+2024-06-17 13:57:24,426 INFO All                 : Recall=0.712, Precision=0.609, F1=0.656, TP=1761, FP=1133, FN= 712 eval.py:418
+2024-06-17 13:57:24,435 INFO Recall(series_based): 0.747 eval.py:425
+2024-06-17 13:58:00,084 INFO Best F1 score: 0.6634 at threshold: 0.605, Sens: 0.655, Prec: 0.672 eval.py:449
+2024-06-17 14:03:05,485 INFO Total number of nodule annotations: 2670 eval.py:580
+2024-06-17 14:03:07,460 INFO Fixed threshold: 0.5725 eval.py:387
+2024-06-17 14:03:07,466 INFO benign              : Recall=0.170, Precision=0.914, F1=0.287, TP= 180, FP=  17, FN= 876 eval.py:417
+2024-06-17 14:03:07,469 INFO probably_benign     : Recall=0.000, Precision=0.000, F1=0.000, TP=   0, FP=1676, FN=1196 eval.py:417
+2024-06-17 14:03:07,472 INFO probably_suspicious : Recall=0.000, Precision=0.000, F1=0.000, TP=   0, FP= 690, FN= 286 eval.py:417
+2024-06-17 14:03:07,474 INFO suspicious          : Recall=0.000, Precision=0.000, F1=0.000, TP=   0, FP= 331, FN= 132 eval.py:417
+2024-06-17 14:03:07,477 INFO All                 : Recall=0.067, Precision=0.062, F1=0.065, TP= 180, FP=2714, FN=2490 eval.py:418
+2024-06-17 14:03:07,480 INFO Recall(series_based): 0.064 eval.py:425
+2024-06-17 14:03:46,743 INFO Best F1 score: 0.0671 at threshold: 0.597, Sens: 0.065, Prec: 0.069 eval.py:449
+2024-06-17 14:07:22,721 INFO Total number of nodule annotations: 2670 eval.py:580
+2024-06-17 14:07:24,710 INFO Fixed threshold: 0.5725 eval.py:387
+2024-06-17 14:07:24,717 INFO benign              : Recall=0.170, Precision=0.914, F1=0.287, TP= 180, FP=  17, FN= 876 eval.py:417
+2024-06-17 14:07:24,719 INFO probably_benign     : Recall=0.000, Precision=0.000, F1=0.000, TP=   0, FP=1676, FN=1196 eval.py:417
+2024-06-17 14:07:24,722 INFO probably_suspicious : Recall=0.000, Precision=0.000, F1=0.000, TP=   0, FP= 690, FN= 286 eval.py:417
+2024-06-17 14:07:24,724 INFO suspicious          : Recall=0.000, Precision=0.000, F1=0.000, TP=   0, FP= 331, FN= 132 eval.py:417
+2024-06-17 14:07:24,727 INFO All                 : Recall=0.067, Precision=0.062, F1=0.065, TP= 180, FP=2714, FN=2490 eval.py:418
+2024-06-17 14:07:24,729 INFO Recall(series_based): 0.064 eval.py:425
+2024-06-17 14:08:03,891 INFO Best F1 score: 0.0671 at threshold: 0.596, Sens: 0.066, Prec: 0.069 eval.py:449
+2024-06-17 14:16:39,711 INFO Total number of nodule annotations: 2653 eval.py:580
+2024-06-17 14:16:41,420 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval.py:318
+2024-06-17 14:16:41,422 INFO series_uid: CHESTCT1575, coordX: 124.5, coordY: 100, coordZ: 115.5, w: 9.00, h: 8.00, d: 5.00 eval.py:319
+2024-06-17 14:16:41,424 INFO cand_id: 9, coordX: 126.618, coordY: 99.615, coordZ: 118.128, w: 9.82, h: 8.09, d: 6.07 eval.py:320
+2024-06-17 14:16:41,426 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval.py:318
+2024-06-17 14:16:41,428 INFO series_uid: CHESTCT1575, coordX: 124.5, coordY: 100, coordZ: 115.5, w: 9.00, h: 8.00, d: 5.00 eval.py:319
+2024-06-17 14:16:41,431 INFO cand_id: 10, coordX: 126.618, coordY: 99.615, coordZ: 118.128, w: 9.82, h: 8.09, d: 6.07 eval.py:320
+2024-06-17 14:16:41,441 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval.py:318
+2024-06-17 14:16:41,443 INFO series_uid: CHEST1605, coordX: 333.92355, coordY: 74.50553, coordZ: 120.5, w: 6.12, h: 5.54, d: 5.00 eval.py:319
+2024-06-17 14:16:41,445 INFO cand_id: 14, coordX: 333.754, coordY: 74.141, coordZ: 119.919, w: 5.17, h: 4.98, d: 3.36 eval.py:320
+2024-06-17 14:16:41,528 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval.py:318
+2024-06-17 14:16:41,530 INFO series_uid: CHESTCT1542, coordX: 71.967316, coordY: 176.82576, coordZ: 84.5, w: 6.82, h: 5.97, d: 5.00 eval.py:319
+2024-06-17 14:16:41,532 INFO cand_id: 13, coordX: 71.279, coordY: 176.861, coordZ: 84.544, w: 6.09, h: 5.51, d: 3.10 eval.py:320
+2024-06-17 14:16:41,575 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval.py:318
+2024-06-17 14:16:41,577 INFO series_uid: CHESTCT1430, coordX: 74, coordY: 187.5, coordZ: 63.5, w: 8.00, h: 7.00, d: 1.00 eval.py:319
+2024-06-17 14:16:41,579 INFO cand_id: 8, coordX: 73.691, coordY: 186.544, coordZ: 65.051, w: 9.82, h: 9.61, d: 4.80 eval.py:320
+2024-06-17 14:16:41,581 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval.py:318
+2024-06-17 14:16:41,584 INFO series_uid: CHESTCT1430, coordX: 74, coordY: 187.5, coordZ: 63.5, w: 8.00, h: 7.00, d: 1.00 eval.py:319
+2024-06-17 14:16:41,586 INFO cand_id: 9, coordX: 73.691, coordY: 186.544, coordZ: 65.051, w: 9.82, h: 9.61, d: 4.80 eval.py:320
+2024-06-17 14:16:41,607 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval.py:318
+2024-06-17 14:16:41,609 INFO series_uid: CHESTCT1750, coordX: 94.46538, coordY: 163.77057, coordZ: 60, w: 4.61, h: 5.64, d: 4.00 eval.py:319
+2024-06-17 14:16:41,612 INFO cand_id: 5, coordX: 94.533, coordY: 163.32, coordZ: 59.833, w: 4.47, h: 5.01, d: 3.39 eval.py:320
+2024-06-17 14:16:41,650 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval.py:318
+2024-06-17 14:16:41,652 INFO series_uid: CHESTCT1438, coordX: 69.191, coordY: 207.392, coordZ: 72.5, w: 4.70, h: 5.20, d: 5.00 eval.py:319
+2024-06-17 14:16:41,654 INFO cand_id: 4, coordX: 69.191, coordY: 207.392, coordZ: 72.575, w: 4.70, h: 5.20, d: 3.59 eval.py:320
+2024-06-17 14:16:41,678 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval.py:318
+2024-06-17 14:16:41,680 INFO series_uid: CHESTCT1474, coordX: 267.28156, coordY: 77.20486, coordZ: 106.5, w: 5.72, h: 5.88, d: 5.00 eval.py:319
+2024-06-17 14:16:41,682 INFO cand_id: 28, coordX: 267.076, coordY: 77.289, coordZ: 106.928, w: 5.18, h: 6.10, d: 2.88 eval.py:320
+2024-06-17 14:16:41,751 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval.py:318
+2024-06-17 14:16:41,753 INFO series_uid: CHESTCT1667, coordX: 236.5, coordY: 53.5, coordZ: 87, w: 7.00, h: 7.00, d: 4.00 eval.py:319
+2024-06-17 14:16:41,755 INFO cand_id: 23, coordX: 234.756, coordY: 53.78, coordZ: 84.662, w: 8.13, h: 9.72, d: 6.28 eval.py:320
+2024-06-17 14:16:41,757 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval.py:318
+2024-06-17 14:16:41,759 INFO series_uid: CHESTCT1667, coordX: 236.5, coordY: 53.5, coordZ: 87, w: 7.00, h: 7.00, d: 4.00 eval.py:319
+2024-06-17 14:16:41,761 INFO cand_id: 25, coordX: 234.756, coordY: 53.78, coordZ: 84.662, w: 8.13, h: 9.72, d: 6.28 eval.py:320
+2024-06-17 14:16:41,769 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval.py:318
+2024-06-17 14:16:41,771 INFO series_uid: CHESTCT1595, coordX: 288, coordY: 146, coordZ: 198.5, w: 18.00, h: 20.00, d: 17.00 eval.py:319
+2024-06-17 14:16:41,774 INFO cand_id: 34, coordX: 286.19, coordY: 146.971, coordZ: 193.957, w: 20.61, h: 29.78, d: 23.12 eval.py:320
+2024-06-17 14:16:41,776 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval.py:318
+2024-06-17 14:16:41,778 INFO series_uid: CHESTCT1595, coordX: 288, coordY: 146, coordZ: 198.5, w: 18.00, h: 20.00, d: 17.00 eval.py:319
+2024-06-17 14:16:41,780 INFO cand_id: 35, coordX: 286.19, coordY: 146.971, coordZ: 193.957, w: 20.61, h: 29.78, d: 23.12 eval.py:320
+2024-06-17 14:16:41,788 INFO Fixed threshold: 0.5725 eval.py:387
+2024-06-17 14:16:41,794 INFO benign              : Recall=0.571, Precision=0.985, F1=0.723, TP= 601, FP=   9, FN= 452 eval.py:417
+2024-06-17 14:16:41,797 INFO probably_benign     : Recall=0.828, Precision=0.618, F1=0.708, TP= 980, FP= 606, FN= 204 eval.py:417
+2024-06-17 14:16:41,799 INFO probably_suspicious : Recall=0.891, Precision=0.527, F1=0.662, TP= 253, FP= 227, FN=  31 eval.py:417
+2024-06-17 14:16:41,801 INFO suspicious          : Recall=0.811, Precision=0.480, F1=0.603, TP= 107, FP= 116, FN=  25 eval.py:417
+2024-06-17 14:16:41,804 INFO All                 : Recall=0.732, Precision=0.670, F1=0.699, TP=1941, FP= 958, FN= 712 eval.py:418
+2024-06-17 14:16:41,806 INFO Recall(series_based): 0.759 eval.py:425
+2024-06-17 14:17:18,236 INFO Best F1 score: 0.7071 at threshold: 0.596, Sens: 0.694, Prec: 0.720 eval.py:449
+2024-06-17 14:23:52,021 INFO Total number of nodule annotations: 2653 eval.py:580
+2024-06-17 14:27:28,486 INFO Total number of nodule annotations: 2653 eval.py:580
+2024-06-17 14:27:30,190 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval.py:318
+2024-06-17 14:27:30,193 INFO series_uid: CHESTCT1575, coordX: 124.5, coordY: 100, coordZ: 115.5, w: 9.00, h: 8.00, d: 5.00 eval.py:319
+2024-06-17 14:27:30,195 INFO cand_id: 9, coordX: 126.618, coordY: 99.615, coordZ: 118.128, w: 9.82, h: 8.09, d: 6.07 eval.py:320
+2024-06-17 14:27:30,197 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval.py:318
+2024-06-17 14:27:30,199 INFO series_uid: CHESTCT1575, coordX: 124.5, coordY: 100, coordZ: 115.5, w: 9.00, h: 8.00, d: 5.00 eval.py:319
+2024-06-17 14:27:30,201 INFO cand_id: 10, coordX: 126.618, coordY: 99.615, coordZ: 118.128, w: 9.82, h: 8.09, d: 6.07 eval.py:320
+2024-06-17 14:27:30,211 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval.py:318
+2024-06-17 14:27:30,213 INFO series_uid: CHEST1605, coordX: 333.92355, coordY: 74.50553, coordZ: 120.5, w: 6.12, h: 5.54, d: 5.00 eval.py:319
+2024-06-17 14:27:30,215 INFO cand_id: 14, coordX: 333.754, coordY: 74.141, coordZ: 119.919, w: 5.17, h: 4.98, d: 3.36 eval.py:320
+2024-06-17 14:27:30,300 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval.py:318
+2024-06-17 14:27:30,302 INFO series_uid: CHESTCT1542, coordX: 71.967316, coordY: 176.82576, coordZ: 84.5, w: 6.82, h: 5.97, d: 5.00 eval.py:319
+2024-06-17 14:27:30,304 INFO cand_id: 13, coordX: 71.279, coordY: 176.861, coordZ: 84.544, w: 6.09, h: 5.51, d: 3.10 eval.py:320
+2024-06-17 14:27:30,346 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval.py:318
+2024-06-17 14:27:30,348 INFO series_uid: CHESTCT1430, coordX: 74, coordY: 187.5, coordZ: 63.5, w: 8.00, h: 7.00, d: 1.00 eval.py:319
+2024-06-17 14:27:30,350 INFO cand_id: 8, coordX: 73.691, coordY: 186.544, coordZ: 65.051, w: 9.82, h: 9.61, d: 4.80 eval.py:320
+2024-06-17 14:27:30,353 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval.py:318
+2024-06-17 14:27:30,355 INFO series_uid: CHESTCT1430, coordX: 74, coordY: 187.5, coordZ: 63.5, w: 8.00, h: 7.00, d: 1.00 eval.py:319
+2024-06-17 14:27:30,357 INFO cand_id: 9, coordX: 73.691, coordY: 186.544, coordZ: 65.051, w: 9.82, h: 9.61, d: 4.80 eval.py:320
+2024-06-17 14:27:30,379 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval.py:318
+2024-06-17 14:27:30,381 INFO series_uid: CHESTCT1750, coordX: 94.46538, coordY: 163.77057, coordZ: 60, w: 4.61, h: 5.64, d: 4.00 eval.py:319
+2024-06-17 14:27:30,383 INFO cand_id: 5, coordX: 94.533, coordY: 163.32, coordZ: 59.833, w: 4.47, h: 5.01, d: 3.39 eval.py:320
+2024-06-17 14:27:30,420 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval.py:318
+2024-06-17 14:27:30,422 INFO series_uid: CHESTCT1438, coordX: 69.191, coordY: 207.392, coordZ: 72.5, w: 4.70, h: 5.20, d: 5.00 eval.py:319
+2024-06-17 14:27:30,424 INFO cand_id: 4, coordX: 69.191, coordY: 207.392, coordZ: 72.575, w: 4.70, h: 5.20, d: 3.59 eval.py:320
+2024-06-17 14:27:30,445 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval.py:318
+2024-06-17 14:27:30,447 INFO series_uid: CHESTCT1474, coordX: 267.28156, coordY: 77.20486, coordZ: 106.5, w: 5.72, h: 5.88, d: 5.00 eval.py:319
+2024-06-17 14:27:30,449 INFO cand_id: 28, coordX: 267.076, coordY: 77.289, coordZ: 106.928, w: 5.18, h: 6.10, d: 2.88 eval.py:320
+2024-06-17 14:27:30,514 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval.py:318
+2024-06-17 14:27:30,517 INFO series_uid: CHESTCT1667, coordX: 236.5, coordY: 53.5, coordZ: 87, w: 7.00, h: 7.00, d: 4.00 eval.py:319
+2024-06-17 14:27:30,519 INFO cand_id: 23, coordX: 234.756, coordY: 53.78, coordZ: 84.662, w: 8.13, h: 9.72, d: 6.28 eval.py:320
+2024-06-17 14:27:30,521 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval.py:318
+2024-06-17 14:27:30,523 INFO series_uid: CHESTCT1667, coordX: 236.5, coordY: 53.5, coordZ: 87, w: 7.00, h: 7.00, d: 4.00 eval.py:319
+2024-06-17 14:27:30,525 INFO cand_id: 25, coordX: 234.756, coordY: 53.78, coordZ: 84.662, w: 8.13, h: 9.72, d: 6.28 eval.py:320
+2024-06-17 14:27:30,533 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval.py:318
+2024-06-17 14:27:30,535 INFO series_uid: CHESTCT1595, coordX: 288, coordY: 146, coordZ: 198.5, w: 18.00, h: 20.00, d: 17.00 eval.py:319
+2024-06-17 14:27:30,537 INFO cand_id: 34, coordX: 286.19, coordY: 146.971, coordZ: 193.957, w: 20.61, h: 29.78, d: 23.12 eval.py:320
+2024-06-17 14:27:30,540 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval.py:318
+2024-06-17 14:27:30,542 INFO series_uid: CHESTCT1595, coordX: 288, coordY: 146, coordZ: 198.5, w: 18.00, h: 20.00, d: 17.00 eval.py:319
+2024-06-17 14:27:30,543 INFO cand_id: 35, coordX: 286.19, coordY: 146.971, coordZ: 193.957, w: 20.61, h: 29.78, d: 23.12 eval.py:320
+2024-06-17 14:27:30,551 INFO Fixed threshold: 0.5725 eval.py:387
+2024-06-17 14:27:30,557 INFO benign              : Recall=0.571, Precision=0.985, F1=0.723, TP= 601, FP=   9, FN= 452 eval.py:417
+2024-06-17 14:27:30,559 INFO probably_benign     : Recall=0.828, Precision=0.618, F1=0.708, TP= 980, FP= 606, FN= 204 eval.py:417
+2024-06-17 14:27:30,562 INFO probably_suspicious : Recall=0.891, Precision=0.527, F1=0.662, TP= 253, FP= 227, FN=  31 eval.py:417
+2024-06-17 14:27:30,564 INFO suspicious          : Recall=0.811, Precision=0.480, F1=0.603, TP= 107, FP= 116, FN=  25 eval.py:417
+2024-06-17 14:27:30,566 INFO All                 : Recall=0.732, Precision=0.670, F1=0.699, TP=1941, FP= 958, FN= 712 eval.py:418
+2024-06-17 14:27:30,569 INFO Recall(series_based): 0.759 eval.py:425
+2024-06-17 14:28:06,694 INFO Best F1 score: 0.7074 at threshold: 0.596, Sens: 0.695, Prec: 0.720 eval.py:449
+2024-06-17 22:34:02,627 INFO Total number of nodule annotations: 2213 eval.py:580
+2024-06-17 22:34:04,589 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval.py:318
+2024-06-17 22:34:04,591 INFO series_uid: CHESTCT1575, coordX: 124.5, coordY: 100.0, coordZ: 115.5, w: 9.00, h: 8.00, d: 5.00 eval.py:319
+2024-06-17 22:34:04,593 INFO cand_id: 9, coordX: 126.618, coordY: 99.615, coordZ: 118.128, w: 9.82, h: 8.09, d: 6.07 eval.py:320
+2024-06-17 22:34:04,596 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval.py:318
+2024-06-17 22:34:04,598 INFO series_uid: CHESTCT1575, coordX: 124.5, coordY: 100.0, coordZ: 115.5, w: 9.00, h: 8.00, d: 5.00 eval.py:319
+2024-06-17 22:34:04,600 INFO cand_id: 10, coordX: 126.618, coordY: 99.615, coordZ: 118.128, w: 9.82, h: 8.09, d: 6.07 eval.py:320
+2024-06-17 22:34:04,713 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval.py:318
+2024-06-17 22:34:04,715 INFO series_uid: CHESTCT1430, coordX: 74.0, coordY: 187.5, coordZ: 63.5, w: 8.00, h: 7.00, d: 1.00 eval.py:319
+2024-06-17 22:34:04,718 INFO cand_id: 8, coordX: 73.691, coordY: 186.544, coordZ: 65.051, w: 9.82, h: 9.61, d: 4.80 eval.py:320
+2024-06-17 22:34:04,720 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval.py:318
+2024-06-17 22:34:04,722 INFO series_uid: CHESTCT1430, coordX: 74.0, coordY: 187.5, coordZ: 63.5, w: 8.00, h: 7.00, d: 1.00 eval.py:319
+2024-06-17 22:34:04,724 INFO cand_id: 9, coordX: 73.691, coordY: 186.544, coordZ: 65.051, w: 9.82, h: 9.61, d: 4.80 eval.py:320
+2024-06-17 22:34:04,842 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval.py:318
+2024-06-17 22:34:04,844 INFO series_uid: CHESTCT1667, coordX: 236.5, coordY: 53.5, coordZ: 87.0, w: 7.00, h: 7.00, d: 4.00 eval.py:319
+2024-06-17 22:34:04,847 INFO cand_id: 23, coordX: 234.756, coordY: 53.78, coordZ: 84.662, w: 8.13, h: 9.72, d: 6.28 eval.py:320
+2024-06-17 22:34:04,849 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval.py:318
+2024-06-17 22:34:04,852 INFO series_uid: CHESTCT1667, coordX: 236.5, coordY: 53.5, coordZ: 87.0, w: 7.00, h: 7.00, d: 4.00 eval.py:319
+2024-06-17 22:34:04,854 INFO cand_id: 25, coordX: 234.756, coordY: 53.78, coordZ: 84.662, w: 8.13, h: 9.72, d: 6.28 eval.py:320
+2024-06-17 22:34:04,862 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval.py:318
+2024-06-17 22:34:04,865 INFO series_uid: CHESTCT1595, coordX: 288.0, coordY: 146.0, coordZ: 198.5, w: 18.00, h: 20.00, d: 17.00 eval.py:319
+2024-06-17 22:34:04,867 INFO cand_id: 34, coordX: 286.19, coordY: 146.971, coordZ: 193.957, w: 20.61, h: 29.78, d: 23.12 eval.py:320
+2024-06-17 22:34:04,869 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval.py:318
+2024-06-17 22:34:04,871 INFO series_uid: CHESTCT1595, coordX: 288.0, coordY: 146.0, coordZ: 198.5, w: 18.00, h: 20.00, d: 17.00 eval.py:319
+2024-06-17 22:34:04,873 INFO cand_id: 35, coordX: 286.19, coordY: 146.971, coordZ: 193.957, w: 20.61, h: 29.78, d: 23.12 eval.py:320
+2024-06-17 22:34:04,880 INFO Fixed threshold: 0.5725 eval.py:387
+2024-06-17 22:34:04,886 INFO benign              : Recall=0.568, Precision=0.951, F1=0.712, TP= 349, FP=  18, FN= 265 eval.py:417
+2024-06-17 22:34:04,888 INFO probably_benign     : Recall=0.828, Precision=0.551, F1=0.661, TP= 979, FP= 799, FN= 204 eval.py:417
+2024-06-17 22:34:04,891 INFO probably_suspicious : Recall=0.891, Precision=0.493, F1=0.635, TP= 253, FP= 260, FN=  31 eval.py:417
+2024-06-17 22:34:04,894 INFO suspicious          : Recall=0.811, Precision=0.453, F1=0.582, TP= 107, FP= 129, FN=  25 eval.py:417
+2024-06-17 22:34:04,896 INFO All                 : Recall=0.763, Precision=0.583, F1=0.661, TP=1688, FP=1206, FN= 525 eval.py:418
+2024-06-17 22:34:04,899 INFO Recall(series_based): 0.787 eval.py:425
+2024-06-17 22:34:41,228 INFO Best F1 score: 0.6877 at threshold: 0.629, Sens: 0.669, Prec: 0.707 eval.py:449
+2024-06-17 23:59:38,233 INFO Total number of nodule annotations: 2393 eval.py:580
+2024-06-17 23:59:40,115 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval.py:318
+2024-06-17 23:59:40,117 INFO series_uid: CHESTCT1575, coordX: 124.5, coordY: 100, coordZ: 115.5, w: 9.00, h: 8.00, d: 5.00 eval.py:319
+2024-06-17 23:59:40,119 INFO cand_id: 9, coordX: 126.618, coordY: 99.615, coordZ: 118.128, w: 9.82, h: 8.09, d: 6.07 eval.py:320
+2024-06-17 23:59:40,122 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval.py:318
+2024-06-17 23:59:40,124 INFO series_uid: CHESTCT1575, coordX: 124.5, coordY: 100, coordZ: 115.5, w: 9.00, h: 8.00, d: 5.00 eval.py:319
+2024-06-17 23:59:40,126 INFO cand_id: 10, coordX: 126.618, coordY: 99.615, coordZ: 118.128, w: 9.82, h: 8.09, d: 6.07 eval.py:320
+2024-06-17 23:59:40,242 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval.py:318
+2024-06-17 23:59:40,244 INFO series_uid: CHESTCT1430, coordX: 74, coordY: 187.5, coordZ: 63.5, w: 8.00, h: 7.00, d: 1.00 eval.py:319
+2024-06-17 23:59:40,246 INFO cand_id: 8, coordX: 73.691, coordY: 186.544, coordZ: 65.051, w: 9.82, h: 9.61, d: 4.80 eval.py:320
+2024-06-17 23:59:40,249 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval.py:318
+2024-06-17 23:59:40,251 INFO series_uid: CHESTCT1430, coordX: 74, coordY: 187.5, coordZ: 63.5, w: 8.00, h: 7.00, d: 1.00 eval.py:319
+2024-06-17 23:59:40,253 INFO cand_id: 9, coordX: 73.691, coordY: 186.544, coordZ: 65.051, w: 9.82, h: 9.61, d: 4.80 eval.py:320
+2024-06-17 23:59:40,377 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval.py:318
+2024-06-17 23:59:40,379 INFO series_uid: CHESTCT1667, coordX: 236.5, coordY: 53.5, coordZ: 87, w: 7.00, h: 7.00, d: 4.00 eval.py:319
+2024-06-17 23:59:40,381 INFO cand_id: 23, coordX: 234.756, coordY: 53.78, coordZ: 84.662, w: 8.13, h: 9.72, d: 6.28 eval.py:320
+2024-06-17 23:59:40,383 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval.py:318
+2024-06-17 23:59:40,385 INFO series_uid: CHESTCT1667, coordX: 236.5, coordY: 53.5, coordZ: 87, w: 7.00, h: 7.00, d: 4.00 eval.py:319
+2024-06-17 23:59:40,387 INFO cand_id: 25, coordX: 234.756, coordY: 53.78, coordZ: 84.662, w: 8.13, h: 9.72, d: 6.28 eval.py:320
+2024-06-17 23:59:40,395 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval.py:318
+2024-06-17 23:59:40,397 INFO series_uid: CHESTCT1595, coordX: 288, coordY: 146, coordZ: 198.5, w: 18.00, h: 20.00, d: 17.00 eval.py:319
+2024-06-17 23:59:40,400 INFO cand_id: 34, coordX: 286.19, coordY: 146.971, coordZ: 193.957, w: 20.61, h: 29.78, d: 23.12 eval.py:320
+2024-06-17 23:59:40,402 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval.py:318
+2024-06-17 23:59:40,404 INFO series_uid: CHESTCT1595, coordX: 288, coordY: 146, coordZ: 198.5, w: 18.00, h: 20.00, d: 17.00 eval.py:319
+2024-06-17 23:59:40,407 INFO cand_id: 35, coordX: 286.19, coordY: 146.971, coordZ: 193.957, w: 20.61, h: 29.78, d: 23.12 eval.py:320
+2024-06-17 23:59:40,413 INFO Fixed threshold: 0.5725 eval.py:387
+2024-06-17 23:59:40,420 INFO benign              : Recall=0.666, Precision=0.969, F1=0.790, TP= 529, FP=  17, FN= 265 eval.py:417
+2024-06-17 23:59:40,422 INFO probably_benign     : Recall=0.828, Precision=0.595, F1=0.693, TP= 979, FP= 665, FN= 204 eval.py:417
+2024-06-17 23:59:40,425 INFO probably_suspicious : Recall=0.891, Precision=0.526, F1=0.661, TP= 253, FP= 228, FN=  31 eval.py:417
+2024-06-17 23:59:40,427 INFO suspicious          : Recall=0.811, Precision=0.480, F1=0.603, TP= 107, FP= 116, FN=  25 eval.py:417
+2024-06-17 23:59:40,430 INFO All                 : Recall=0.781, Precision=0.645, F1=0.707, TP=1868, FP=1026, FN= 525 eval.py:418
+2024-06-17 23:59:40,433 INFO Recall(series_based): 0.797 eval.py:425
+2024-06-18 00:00:16,352 INFO Best F1 score: 0.7296 at threshold: 0.626, Sens: 0.691, Prec: 0.773 eval.py:449

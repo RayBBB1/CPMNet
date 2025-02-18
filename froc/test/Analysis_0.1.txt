@@ -1,0 +1,22 @@
+Candidate detection results:
+    True positives: 2393
+    False positives: 14708
+    False negatives: 0
+    True negatives: 0
+    Total number of candidates: 17101
+    Total number of nodules: 2393
+    Total number of ignored candidates which were double detections on a nodule: 8
+    Sensitivity: 1.000
+    Average number of candidates per scan: 31.092727273
+    FN_diammeter:
+--------------------
+FP/Scan, Sensitivity, Precision
+0.125, 0.387, 0.931
+0.250, 0.461, 0.889
+0.500, 0.562, 0.830
+1.000, 0.704, 0.754
+2.000, 0.787, 0.631
+4.000, 0.863, 0.484
+8.000, 0.913, 0.332
+
+Froc_mean = 0.67

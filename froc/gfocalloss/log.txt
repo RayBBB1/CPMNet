@@ -1,0 +1,34 @@
+2024-10-04 23:12:18,318 INFO Total number of nodule annotations: 3348 eval_old.py:580
+2024-10-04 23:13:24,488 INFO Total number of nodule annotations: 3348 eval_old.py:580
+2024-10-04 23:13:26,279 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval_old.py:318
+2024-10-04 23:13:26,281 INFO series_uid: CHESTCT1759, coordX: 284, coordY: 125.5, coordZ: 110, w: 10.00, h: 11.00, d: 6.00 eval_old.py:319
+2024-10-04 23:13:26,284 INFO cand_id: 37, coordX: 284.062, coordY: 123.375, coordZ: 105.562, w: 11.50, h: 13.17, d: 9.61 eval_old.py:320
+2024-10-04 23:13:26,285 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval_old.py:318
+2024-10-04 23:13:26,287 INFO series_uid: CHESTCT1759, coordX: 284, coordY: 125.5, coordZ: 110, w: 10.00, h: 11.00, d: 6.00 eval_old.py:319
+2024-10-04 23:13:26,289 INFO cand_id: 38, coordX: 284.062, coordY: 123.375, coordZ: 105.562, w: 11.50, h: 13.17, d: 9.61 eval_old.py:320
+2024-10-04 23:13:26,496 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval_old.py:318
+2024-10-04 23:13:26,498 INFO series_uid: CHESTCT1430, coordX: 74, coordY: 187.5, coordZ: 63.5, w: 8.00, h: 7.00, d: 1.00 eval_old.py:319
+2024-10-04 23:13:26,500 INFO cand_id: 10, coordX: 73.750, coordY: 186.375, coordZ: 65.125, w: 10.34, h: 9.63, d: 5.24 eval_old.py:320
+2024-10-04 23:13:26,501 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval_old.py:318
+2024-10-04 23:13:26,502 INFO series_uid: CHESTCT1430, coordX: 74, coordY: 187.5, coordZ: 63.5, w: 8.00, h: 7.00, d: 1.00 eval_old.py:319
+2024-10-04 23:13:26,504 INFO cand_id: 11, coordX: 73.750, coordY: 186.375, coordZ: 65.125, w: 10.34, h: 9.63, d: 5.24 eval_old.py:320
+2024-10-04 23:13:26,562 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval_old.py:318
+2024-10-04 23:13:26,564 INFO series_uid: CHESTCT1401, coordX: 49.650013, coordY: 116.26561, coordZ: 89.5, w: 12.14, h: 12.20, d: 11.00 eval_old.py:319
+2024-10-04 23:13:26,566 INFO cand_id: 0, coordX: 57.656, coordY: 115.250, coordZ: 88.281, w: 16.64, h: 9.82, d: 5.93 eval_old.py:320
+2024-10-04 23:13:26,567 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval_old.py:318
+2024-10-04 23:13:26,569 INFO series_uid: CHESTCT1401, coordX: 49.650013, coordY: 116.26561, coordZ: 89.5, w: 12.14, h: 12.20, d: 11.00 eval_old.py:319
+2024-10-04 23:13:26,570 INFO cand_id: 1, coordX: 57.656, coordY: 115.250, coordZ: 88.281, w: 16.64, h: 9.82, d: 5.93 eval_old.py:320
+2024-10-04 23:13:26,710 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval_old.py:318
+2024-10-04 23:13:26,711 INFO series_uid: CHESTCT1667, coordX: 236.5, coordY: 53.5, coordZ: 87, w: 7.00, h: 7.00, d: 4.00 eval_old.py:319
+2024-10-04 23:13:26,713 INFO cand_id: 18, coordX: 234.906, coordY: 53.750, coordZ: 85.180, w: 7.01, h: 8.50, d: 6.84 eval_old.py:320
+2024-10-04 23:13:26,715 INFO This is strange: There are two nodules overlapping with the same prediction, but one of them is already deleted eval_old.py:318
+2024-10-04 23:13:26,716 INFO series_uid: CHESTCT1667, coordX: 236.5, coordY: 53.5, coordZ: 87, w: 7.00, h: 7.00, d: 4.00 eval_old.py:319
+2024-10-04 23:13:26,718 INFO cand_id: 19, coordX: 234.906, coordY: 53.750, coordZ: 85.180, w: 7.01, h: 8.50, d: 6.84 eval_old.py:320
+2024-10-04 23:13:26,736 INFO Fixed threshold: 0.5725 eval_old.py:387
+2024-10-04 23:13:26,743 INFO benign              : Recall=0.345, Precision=0.997, F1=0.512, TP= 603, FP=   2, FN=1146 eval_old.py:417
+2024-10-04 23:13:26,745 INFO probably_benign     : Recall=0.730, Precision=0.907, F1=0.809, TP= 864, FP=  89, FN= 319 eval_old.py:417
+2024-10-04 23:13:26,747 INFO probably_suspicious : Recall=0.849, Precision=0.801, F1=0.824, TP= 241, FP=  60, FN=  43 eval_old.py:417
+2024-10-04 23:13:26,749 INFO suspicious          : Recall=0.765, Precision=0.652, F1=0.704, TP= 101, FP=  54, FN=  31 eval_old.py:417
+2024-10-04 23:13:26,751 INFO All                 : Recall=0.540, Precision=0.898, F1=0.675, TP=1809, FP= 205, FN=1539 eval_old.py:418
+2024-10-04 23:13:26,753 INFO Recall(series_based): 0.578 eval_old.py:425
+2024-10-04 23:13:46,979 INFO Best F1 score: 0.7518 at threshold: 0.505, Sens: 0.724, Prec: 0.782 eval_old.py:449

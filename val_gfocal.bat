@@ -1,0 +1,1 @@
+python val.py --model_path save\[2024-07-27-0944]_me_small01_dfocal_shape_weight\best\best_froc_mean_recall.pth --val_mixed_precision --apply_lobe  --crop_size 160 160 160 --overlap_ratio 0.1 0.1 0.1 --val_set E:\Jack\Me_dataset_dicom_resize_npy\test\data_list_crop.txt --det_post_process_class networks.detection_post_process_gfocal 
