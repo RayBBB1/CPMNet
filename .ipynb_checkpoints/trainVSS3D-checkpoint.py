@@ -1,6 +1,8 @@
 # %% -*- coding: utf-8 -*-
 # %%
 from __future__ import print_function
+import sys
+sys.path.append('/root/notebooks/automl/CPMNet/networks')
 import argparse
 import torch
 import os
@@ -126,7 +128,7 @@ def get_args():
     parser.add_argument('--test_det_threshold', type=float, default=0.2, help='detection threshold for test')
     parser.add_argument('--test_froc_det_thresholds', nargs='+', type=float, default=[0.2, 0.5, 0.7], help='froc det thresholds')
     # Model
-    parser.add_argument('--model_class', type=str, default='networks.ResNet_3D_CPM', help='model class')
+    parser.add_argument('--model_class', type=str, default='networks.VSS3DNet', help='model class')
     parser.add_argument('--norm_type', type=str, default='batchnorm', help='norm type of backbone')
     parser.add_argument('--head_norm', type=str, default='batchnorm', help='norm type of head')
     parser.add_argument('--act_type', type=str, default='ReLU', help='act type of network')
@@ -202,21 +204,26 @@ def prepare_training(args, device, num_training_steps) -> Tuple[int, Any, AdamW,
                                    cls_focal_alpha = args.cls_focal_alpha,
                                    cls_focal_gamma = args.cls_focal_gamma)
                                         
-    model = Resnet18(norm_type = args.norm_type,
-                     head_norm = args.head_norm, 
-                     act_type = args.act_type, 
-                     se = not args.no_se, 
-                     aspp = args.aspp,
-                     first_stride=args.first_stride,
-                     n_blocks=args.n_blocks,
-                     n_filters=args.n_filters,
-                     stem_filters=args.stem_filters,
-                     dropout=args.dropout,
-                     dw_type = args.dw_type,
-                     up_type = args.up_type,
-                     detection_loss = detection_loss,
-                     out_stride = args.out_stride,
-                     device = device)
+    model = Resnet18(
+        input_channels=1,
+        n_stages=4,
+        features_per_stage=[64, 96, 128,160],
+        conv_op=nn.Conv3d,
+        kernel_sizes=[3, 3,3],
+        strides=[2,2,2],
+        n_conv_per_stage=[2, 2, 2,2],
+        num_classes=1,
+        n_conv_per_stage_decoder=[2],# conv after  transpose, not on skip connection
+        conv_bias=True,
+        norm_op=nn.BatchNorm3d,
+        norm_op_kwargs={'eps': 1e-5, 'affine': True},
+        dropout_op=None,
+        dropout_op_kwargs=None,
+        nonlin=nn.ReLU,
+        nonlin_kwargs={'inplace': True},
+        detection_loss = detection_loss,
+        device = device
+        ).to(device)
 
 
     
@@ -236,11 +243,11 @@ def prepare_training(args, device, num_training_steps) -> Tuple[int, Any, AdamW,
 
     start_epoch = 0
     model = model.to(device=device, memory_format=get_memory_format(getattr(args, 'memory_format', 'channels_first')))
-    from ptflops import get_model_complexity_info
-    macs, params = get_model_complexity_info(model, (1, 96, 96, 96), as_strings=False,
-                                            print_per_layer_stat=True, verbose=True)
-    print('{:<30}  {:<8}'.format('Computational complexity: ', macs))
-    print('{:<30}  {:<8}'.format('Number of parameters: ', params))
+    # from ptflops import get_model_complexity_info
+    # macs, params = get_model_complexity_info(model, (1, 96, 96, 96), as_strings=False,
+    #                                         print_per_layer_stat=True, verbose=True)
+    # print('{:<30}  {:<8}'.format('Computational complexity: ', macs))
+    # print('{:<30}  {:<8}'.format('Number of parameters: ', params))
     
     
     # build optimizer and scheduler

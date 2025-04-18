@@ -32,19 +32,23 @@ def gen_dicom_path(folder: str, series_name: str) -> str:
     # return os.path.join(folder, series_name, f'{series_name}_crop.npy')
 
 def gen_label_path(folder: str, series_name: str) -> str:
-    return os.path.join(folder, series_name, 'mask', f'{series_name}_nodule_count_crop.json')
+    # return os.path.join(folder, series_name, 'mask', f'{series_name}_nodule_count_crop.json')groups/BME/bbox_ME_0.8_0.8_1_crop_v1b2
     # luna16
     # return os.path.join(folder, series_name, f'{series_name}_nodule_count_crop.json')
-    # return os.path.join(r'D:\Bme_Dataset\ME\ME_db1_20241210\bbox_ME_0.8_0.8_1_crop', f'{series_name}_nodule_count_crop.json')
+    return os.path.join(r'/root/notebooks/groups/BME/bbox_ME_0.8_0.8_1_crop_v1b2', f'{series_name}_nodule_count_crop.json')
 
 def gen_additation_label_path(folder: str, series_name: str, additation_names: list) -> list:
-    label_pathes = []
-    for additation_name in additation_names:
-        label_pathes.append(os.path.join(folder, series_name, additation_name, f'{series_name}_nodule_count_crop.json'))
-    return label_pathes
+    # label_pathes = []
+    # for additation_name in additation_names:
+    #     label_pathes.append(os.path.join(r'/root/notebooks/groups/BME/ME_rechecked_annotation', f'{additation_name}.json'))
+    if series_name in additation_names:
+        return os.path.join(r'/root/notebooks/groups/BME/ME_rechecked_annotation', f'{series_name}.json')
+    else:
+        return None
+    # return label_pathes
     # luna16
     # return os.path.join(folder, series_name, f'{series_name}_nodule_count_crop.json')
-    
+
 def load_series_list(series_list_path: str) -> List[List[str]]:
     """
     Return:
@@ -184,7 +188,7 @@ def load_label(label_path: str, image_spacing: np.ndarray, min_d = 0, min_size =
                     NODULE_SIZE: nodule_sizes}
     return label
 
-def load_label_with_newTP(label_path: str, additation_paths: list, image_spacing: np.ndarray, min_d = 0, min_size = 0) -> Dict[str, np.ndarray]:
+def load_label_with_newTP(label_path: str, additation_path: list, image_spacing: np.ndarray, min_d = 0, min_size = 0) -> Dict[str, np.ndarray]:
     """
     Return:
         A dictionary with keys 'all_loc', 'all_rad', 'all_cls'
@@ -197,15 +201,25 @@ def load_label_with_newTP(label_path: str, additation_paths: list, image_spacing
         info = json.load(f)
     
     bboxes = np.array(info[BBOXES]) # (n, 2, 3)
-    nodule_sizes = np.array(info[NODULE_SIZE]) # (n, 1)
-    for additation_path in additation_paths:
+    # nodule_sizes = np.array(info[NODULE_SIZE]) # (n, 1)
+    nodule_sizes = np.array([compute_nodule_volume(int(bbox[1][0])-int(bbox[0][0]), int(bbox[1][1])-int(bbox[0][1]), int(bbox[1][2])-int(bbox[0][2])) for bbox in bboxes])
+    # for additation_path in additation_paths:
+        # with open(additation_path, 'r') as f:
+        #     temp = json.load(f)
+        # if len(temp[BBOXES]) == 0:
+        #     continue
+        # temp_bboxes = np.array(temp[BBOXES])
+        # bboxes = np.concatenate([bboxes, temp_bboxes], axis=0)
+        # temp_nodule_size = np.array([compute_nodule_volume(int(bbox[1][0])-int(bbox[0][0]), int(bbox[1][1])-int(bbox[0][1]), int(bbox[1][2])-int(bbox[0][2])) for bbox in temp_bboxes])
+        # nodule_sizes = np.concatenate([nodule_sizes, temp_nodule_size], axis=0)
+    if additation_path is not None:
         with open(additation_path, 'r') as f:
             temp = json.load(f)
-        if len(temp[BBOXES]) == 0:
-            continue
-        bboxes = np.concatenate([bboxes, np.array(temp[BBOXES])], axis=0)
-        nodule_sizes = np.concatenate([nodule_sizes, np.array(temp[NODULE_SIZE])], axis=0)
-    
+        temp_bboxes = np.array(temp[BBOXES])
+        bboxes = np.concatenate([bboxes, temp_bboxes], axis=0)
+        temp_nodule_size = np.array([compute_nodule_volume(int(bbox[1][0])-int(bbox[0][0]), int(bbox[1][1])-int(bbox[0][1]), int(bbox[1][2])-int(bbox[0][2])) for bbox in temp_bboxes])
+        nodule_sizes = np.concatenate([nodule_sizes, temp_nodule_size], axis=0)
+        
     if len(bboxes) == 0:
         label = {ALL_LOC: np.zeros((0, 3), dtype=np.float64),
                 ALL_CLS: np.zeros((0, 3), dtype=np.float64),

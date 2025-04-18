@@ -25,8 +25,8 @@ import sys
 from .modules import SELayer, Identity, ConvBlock, act_layer, norm_layer3d
 from ptflops import get_model_complexity_info
 '''
-Computational complexity:       94.95 GMac
-Number of parameters:           12.11 M 
+Computational complexity:       93.05 GMac
+Number of parameters:           12.5 M  
 '''
 class LayerNorm(nn.Module):
     r""" LayerNorm that supports two data formats: channels_last (default) or channels_first.
@@ -70,7 +70,6 @@ class MambaLayer(nn.Module):
         )
     
     def forward(self, x):
-        nan1 = torch.isnan(x).any()
         B, C = x.shape[:2]
         x_skip = x
         assert C == self.dim
@@ -82,10 +81,7 @@ class MambaLayer(nn.Module):
 
         out = x_mamba.transpose(-1, -2).reshape(B, C, *img_dims)
         out = out + x_skip
-        nan2 = torch.isnan(out).any()
-
-        if nan2 == True:
-            print(f"Nan: {nan1}, {nan2}")
+        
         return out
 
 class MlpChannel(nn.Module):
@@ -96,11 +92,9 @@ class MlpChannel(nn.Module):
         self.fc2 = nn.Conv3d(mlp_dim, hidden_size, 1)
 
     def forward(self, x):
-        x_skip = x 
         x = self.fc1(x)
         x = self.act(x)
         x = self.fc2(x)
-        x = x + x_skip
         return x
 
 class GSC(nn.Module):
@@ -206,6 +200,7 @@ class MambaEncoder(nn.Module):
     def forward(self, x):
         x = self.forward_features(x)
         return x
+
 class SegMamba(nn.Module):
     def __init__(
         self,
@@ -305,6 +300,7 @@ class SegMamba(nn.Module):
 
                 
         return dec2
+        
 class Resnet18(nn.Module):
 
     def __init__(self,
@@ -347,7 +343,7 @@ class Resnet18(nn.Module):
         #                                                         f"n_conv_per_stage_decoder: {n_conv_per_stage_decoder}"
         self.feature_extractor = SegMamba(in_chans=1,
                         out_chans=1,
-                        depths=[2,2,2,2],
+                        depths=[2,3,3,3],
                         feat_size= features_per_stage)
                      
         self.head =  ClsRegHead(in_channels=features_per_stage[1], feature_size=features_per_stage[1], conv_num=3, norm_type="batchnorm", act_type="ReLU")

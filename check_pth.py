@@ -1,7 +1,7 @@
 import torch
 
 # 假設你的 .pth 檔案路徑是 'your_model.pth'
-pth_file_path = '/root/notebooks/automl/CPMNet/save/[2025-02-17-1050]_ME_db1/model/epoch_220.pth'
+pth_file_path = '/root/notebooks/automl/CPMNet/save/[2025-02-18-2046]_ME_db1/model/epoch_80.pth'
 
 try:
     checkpoint = torch.load(pth_file_path, map_location='cpu')
