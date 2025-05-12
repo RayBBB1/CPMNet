@@ -343,7 +343,7 @@ class Resnet18(nn.Module):
         #                                                         f"n_conv_per_stage_decoder: {n_conv_per_stage_decoder}"
         self.feature_extractor = SegMamba(in_chans=1,
                         out_chans=1,
-                        depths=[2,3,3,3],
+                        depths=[2,2,2,2],
                         feat_size= features_per_stage)
                      
         self.head =  ClsRegHead(in_channels=features_per_stage[1], feature_size=features_per_stage[1], conv_num=3, norm_type="batchnorm", act_type="ReLU")

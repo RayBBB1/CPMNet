@@ -1,4 +1,6 @@
 # from fvcore.nn import FlopCountAnalysis
+import sys
+sys.path.append(r"/root/notebooks/automl/CPMNet/networks")
 import ipdb
 import torch
 import torch.nn as nn
@@ -23,9 +25,10 @@ except:
     from models.SS3D import SS3D, SS3D_v5, SS3D_v6
     from models.VSS3D import VSSLayer3D
     from models.Transformer import TransformerBottleneck
+from models.SMBBlock import SMBBlock 
 """
-Computational complexity:       164.17 GMac
-Number of parameters:           43.23 M 
+Computational complexity:       95.35 GMac
+Number of parameters:           5.5 M  
 """
 class conv_block_3D(nn.Module):
     def __init__(self, ch_in, ch_out):
@@ -168,78 +171,37 @@ class SS_Conv_SSM_3D(nn.Module): #no multiplicative path, added MLP. more like t
         output = channel_shuffle_3d(output, groups=2)
         return output + input
 
-from monai.networks.blocks import SubpixelUpsample # 需要安裝 MONAI
 class upconv(nn.Module):
     def __init__(self, ch_in, ch_out, kernel_size = 3, upsample = True, preact = True):
         super().__init__()
-
-
-        scale_factor = 2
-        spatial_dims = 3
-        group_norm_groups = 8
-        mode = 'pixelshuffle'
-        upsample_op = None
-
-        if mode == 'interpolation':
-            upsample_op = nn.Sequential(
-                nn.Upsample(scale_factor=scale_factor, mode='trilinear', align_corners=False),
-                nn.Conv3d(ch_in, ch_out, kernel_size=kernel_size, stride=1, padding=kernel_size // 2, bias=True),
-            )
-        elif mode == 'transpose':
-            padding = kernel_size // 2
-            output_padding = 1 # 對於 stride=2 常見設置
-            upsample_op = nn.ConvTranspose3d(
-                in_channels=ch_in,
-                out_channels=ch_out,
-                kernel_size=kernel_size,
-                stride=scale_factor,
-                padding=padding,
-                output_padding=output_padding,
-                bias=True
-            )
-        elif mode == 'pixelshuffle':
-            conv_out_channels = ch_out * (scale_factor ** spatial_dims)
-            pre_conv = nn.Conv3d(
-                in_channels=ch_in,
-                out_channels=conv_out_channels,
-                kernel_size=kernel_size,
-                stride=1,
-                padding=kernel_size // 2,
-                bias=True
-            )
-            shuffle = SubpixelUpsample(
-                spatial_dims=spatial_dims,
-                in_channels=conv_out_channels,
-                out_channels=ch_out,
-                scale_factor=scale_factor
-            )
-            upsample_op = nn.Sequential(pre_conv, 
-                nn.GroupNorm(group_norm_groups, conv_out_channels),
-                nn.ReLU(inplace=True),
-                shuffle
+        if upsample:
+            upconv = nn.Sequential(nn.Upsample(scale_factor = 2),
+                                    nn.Conv3d(ch_in, ch_out, kernel_size = 3, stride = 1, padding = 1, bias = True),
             )
         else:
-            raise ValueError(f"Unknown upsampling mode: {mode}. Choose from 'interpolation', 'transpose', 'pixelshuffle'.")
-
+            upconv = nn.ConvTranspose3d(
+                                        in_channels=ch_in,
+                                        out_channels=ch_out,
+                                        kernel_size=kernel_size,
+                                        stride=2,
+                                        padding=kernel_size//2 - (1 - kernel_size % 2),
+                                        output_padding=kernel_size % 2,
+                                        )
         if preact:
-            act = nn.Sequential(
-                nn.GroupNorm(group_norm_groups, ch_in),
-                nn.ReLU(inplace=True)
-            )
-            self.up = nn.Sequential(act, upsample_op)
+            act = nn.Sequential(nn.GroupNorm(8, ch_in),nn.ReLU(inplace = True))# if act else (lambda x: x)
+            self.up = nn.Sequential(act, upconv)
         else:
-            act = nn.Sequential(
-                nn.GroupNorm(group_norm_groups, ch_out),
-                nn.ReLU(inplace=True)
-            )
-            self.up = nn.Sequential(upsample_op, act)
-
-    def forward(self, x):
+            act = nn.Sequential(nn.GroupNorm(8, ch_out),nn.ReLU(inplace = True))# if act else (lambda x: x)
+            self.up = nn.Sequential(upconv, act)
+            
+            
+    def forward(self,x):
         x = self.up(x)
         return x
 
+
 class down_block(nn.Module):
-    def __init__(self, ch_in, ch_out, maxpool=False, PatchMerging= True, id=True, preact=True, kernel_size=3, size = None):
+    def __init__(self, ch_in, ch_out, maxpool=False, PatchMerging= True, id=True, preact=True, kernel_size=3, size = None, block_num = 1):
         super().__init__()
         
         self.preact = preact
@@ -268,18 +230,23 @@ class down_block(nn.Module):
         #-----------------------
         # encode block using SS_Conv_SSM_3D
         #-----------------------
-        self.encode_block = SS_Conv_SSM_3D(
-            hidden_dim=ch_out,
-            drop_path=0.3,  # 可以根據需要調整
-            norm_layer=nn.LayerNorm,
-            attn_drop_rate=0.0,  # 可以根據需要調整
-            d_state=16,  # 可以根據需要調整
-            expansion_factor=1,
-            mlp_drop_rate=0.0,  # 可以根據需要調整
-            orientation=0,  # 可以根據需要調整
-            scan_type='scan',  # 可以根據需要調整
-            size=size  # 根據你的輸入尺寸調整
-        )
+        encode_blocks = []
+        for _ in range(block_num):
+            encode_blocks.append(
+                SS_Conv_SSM_3D(
+                    hidden_dim=ch_out,
+                    drop_path=0.3,  # 可以根據需要調整
+                    norm_layer=nn.LayerNorm,
+                    attn_drop_rate=0.0,  # 可以根據需要調整
+                    d_state=16,  # 可以根據需要調整
+                    expansion_factor=1,
+                    mlp_drop_rate=0.0,  # 可以根據需要調整
+                    orientation=0,  # 可以根據需要調整
+                    scan_type='scan',  # 可以根據需要調整
+                    size=size  # 根據你的輸入尺寸調整
+                )
+            )
+        self.encode_block = nn.Sequential(*encode_blocks)
 
     def forward(self, x):
         x = self.down(x)
@@ -313,17 +280,17 @@ class MedSegMamba(nn.Module):
         super().__init__()
         self.hidden_dim = int((img_dim // patch_dim) ** 3)
         
-        self.preconv = nn.Conv3d(img_ch, channel_sizes[1], kernel_size=3,stride=1,padding=1) if preact else (nn.Identity())
+        self.preconv = nn.Conv3d(img_ch, channel_sizes[1], kernel_size=3,stride=2,padding=1) if preact else (nn.Identity())
         if preact:
             self.Conv1 = ResConvBlock3D(ch_in=channel_sizes[1],ch_out=channel_sizes[1], id=id, preact=preact) # 96
         else:
             self.Conv1 = ResConvBlock3D(ch_in=channel_sizes[0],ch_out=channel_sizes[1], id=id, preact=preact) # 96
             
-        self.downconv1 = down_block(channel_sizes[1], channel_sizes[2], maxpool, PatchMerging, id, preact, size = 48)
+        self.downconv1 = down_block(channel_sizes[1], channel_sizes[2], maxpool, PatchMerging, id, preact, size = 48, block_num = 2)
 
-        self.downconv2 = down_block(channel_sizes[2], channel_sizes[3], maxpool, PatchMerging, id, preact, size = 24)
+        self.downconv2 = down_block(channel_sizes[2], channel_sizes[3], maxpool, PatchMerging, id, preact, size = 24, block_num = 3)
 
-        self.downconv3 = down_block(channel_sizes[3], channel_sizes[4], maxpool, PatchMerging, id, preact, size = 12)
+        self.downconv3 = down_block(channel_sizes[3], channel_sizes[4], maxpool, PatchMerging, id, preact, size = 12, block_num = 2)
 
         self.gn = nn.GroupNorm(8, channel_sizes[4])
         self.relu = nn.ReLU(inplace=True)
@@ -342,20 +309,21 @@ class MedSegMamba(nn.Module):
 
     def forward(self,input):
         # encoding path
-        input = self.preconv(input)
+        input = self.preconv(input) #96
         
-        x1 = self.Conv1(input)
+        x1 = self.Conv1(input) #96
 
-        x2 = self.downconv1(x1)
+        x2 = self.downconv1(x1)#48
 
-        x3 = self.downconv2(x2)
+        x3 = self.downconv2(x2)#24
 
-        x = self.downconv3(x3)
+        x = self.downconv3(x3)#12
 
         #decoding
         d4 = self.Up4(x)
         d4 = torch.cat((x3,d4),dim=1)
         d4 = self.Up_conv4(d4)
+
         return d4
 class Resnet18(nn.Module):
     def __init__(self,

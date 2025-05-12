@@ -1,0 +1,1 @@
+python val.py --model_path save\test\best_froc_2_recall.pth --val_mixed_precision --apply_lobe  --crop_size 160 160 160 --overlap_ratio 0.1 0.1 0.1 --val_set D:\Jack\Me_dataset_dicom_resize_npy\test1\data_list.txt

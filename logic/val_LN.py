@@ -9,7 +9,7 @@ import torch.nn as nn
 from torch.utils.data import DataLoader
 
 from utils.box_utils import nms_3D
-from evaluationScript.eval_add_annotation import Evaluation
+from evaluationScript.eval import Evaluation
 
 from utils.utils import get_progress_bar
 from .utils import get_memory_format

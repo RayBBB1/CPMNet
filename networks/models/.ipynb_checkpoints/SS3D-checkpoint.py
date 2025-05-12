@@ -235,8 +235,8 @@ class SS3D(nn.Module):  # 原版 Vanilla VSS block
             xs, dts, As, Bs, Cs, Ds, z=None, delta_bias=dt_projs_bias, delta_softplus=True, return_last_state=False
         ).view(B, K, -1, L)
         out2 = torch.transpose(out_y[:, 1].view(B, -1, W, H, D), dim0=2, dim1=3).contiguous().view(B, -1, L)
-        out3 = torch.transpose(out_y[:, 2].view(B, -1, W, H, D), dim0=2, dim1=4).contiguous().view(B, -1, L)
-        out4 = torch.transpose(out_y[:, 3].view(B, -1, W, H, D), dim0=3, dim1=4).contiguous().view(B, -1, L)
+        out3 = torch.transpose(out_y[:, 2].view(B, -1, D, W, H), dim0=2, dim1=4).contiguous().view(B, -1, L)
+        out4 = torch.transpose(out_y[:, 3].view(B, -1, H, D, W), dim0=3, dim1=4).contiguous().view(B, -1, L)
         out5 = torch.flip(out_y[:, 4], dims=[-1]).view(B, -1, L)  # HWD 反向 -> HWD 正向
         out6 = torch.flip(torch.transpose(out_y[:, 5].view(B, -1, W, H, D), dim0=2, dim1=3).contiguous(), dims=[-1]).view(B, -1, L)  # WHD 反向 -> HWD
         out7 = torch.flip(torch.transpose(out_y[:, 6].view(B, -1, D, W, H), dim0=2, dim1=4).contiguous(), dims=[-1]).view(B, -1, L)  # DWH 反向 -> HWD
